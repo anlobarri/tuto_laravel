@@ -18,3 +18,5 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/home/id1/{id1}/id2/{id2}', 'HomeController@getId');
+Route::get('/home/showview', 'HomeController@showview');

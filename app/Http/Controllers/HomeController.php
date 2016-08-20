@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -24,6 +24,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        //return view('home');
+        return "Hola caracola";
+    }
+
+    public function getId($id1, $id2)
+    {
+        return '<p>id1 es igual a </p>'. $id1 . '<p> id2 es igual a </p>' .$id2;
+    }
+
+    public function showView()
+    {
+        $msg = "Aprendiendo Laravel 5";
+        $array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        return View('home.showview', ['msg' => $msg, 'array' => $array]);
     }
 }
