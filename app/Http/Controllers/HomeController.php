@@ -39,4 +39,18 @@ class HomeController extends Controller
         $array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
         return View('home.showview', ['msg' => $msg, 'array' => $array]);
     }
+
+    public function form(Request $request)
+    {
+        if($request->isMethod("post") && $request->has("name"))
+        {
+            $name = $request->input("name");
+        }else
+        {
+            $name = "";
+        }
+
+
+        return View('home.form', ["name" => $name]);
+    }
 }
