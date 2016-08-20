@@ -26,3 +26,9 @@ Route::get('/home/showview', 'HomeController@showview');
 
 //Route::match(["get", "post"], "home/form", "HomeController@form");	Las dos peticiones hacen lo mismo
 Route::any('home/form', 'HomeController@form');
+
+
+//Validar rutas con expresiones regulares
+Route::get('home/nombre/{nombre}/apellidos/{apellidos}', function($nombre, $apellidos){
+	return "Nombre:  " . $nombre . ' Apellidos: '. $apellidos;
+})->where(["nombre" => '[a-zA-Z]+', 'apellidos' => '[a-zA-Z]+']);
