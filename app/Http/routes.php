@@ -24,4 +24,5 @@ Route::get('/home/showview', 'HomeController@showview');
 
 //Aceptar peticiones GET y POST
 
-Route::match(["get", "post"], "home/form", "HomeController@form");
+//Route::match(["get", "post"], "home/form", "HomeController@form");	Las dos peticiones hacen lo mismo
+Route::any('home/form', 'HomeController@form');
